@@ -1,0 +1,23 @@
+name: deploy-app
+
+# Trigger the workflow on a push event targeting the main branch
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+  push:
+    branches:
+      - main
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code
+      # - name: Checkout Code
+      #   uses: actions/checkout@v4
+
+      # Step 2: Run your commands
+      - name: Run a Script
+        run: echo "Deploying app…"
